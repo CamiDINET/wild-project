@@ -1,0 +1,16 @@
+* {
+    font-family: 'Just Another Hand', cursive;
+}
+h1{
+    font-size: 8vw;
+    font-weight: 100;
+    border-bottom: 0;
+    margin-block-end: 0;
+}
+.souligner{
+    display: flex; 
+    align-items: flex-start;
+}
+.souligner img{
+    width: 47vw; 
+}

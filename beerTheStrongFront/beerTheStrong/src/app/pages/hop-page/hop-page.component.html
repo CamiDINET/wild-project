@@ -1,0 +1,48 @@
+<app-nav-bar></app-nav-bar>
+<h1>Houblons en stock</h1>
+<div class="souligner">
+  <img src="../../../assets/souligner.svg" alt="soulignemen">
+</div>
+<section class="listOfIngredients">
+    <ng-container *ngFor="let hopToDisplay of hopsInStockToDisplay; let i = index">
+        <div [ngClass]="activateHop ? 'hopBig' : 'hop'" (click)="onClick()">
+            <img class="imgHop" src="../../../assets/hops.svg" alt="photo de houblon">
+            <div class="contain">
+              <div>Nom: {{hopToDisplay.hop.name}}</div>
+              <div *ngIf="activateHop">Type: {{hopToDisplay.hop.type}}</div>
+              <div *ngIf="activateHop">Style: {{hopToDisplay.hop.style}}</div>
+              <div *ngIf="activateHop">Pays: {{hopToDisplay.country}}</div>
+              <div>Acide alpha: {{hopToDisplay.alphaAcid}}%</div>
+              <div>Stock: {{hopToDisplay.stockQuantity}} g</div> 
+              <div *ngIf="activateHop">Description: {{hopToDisplay.hop.characterDescription}}</div> 
+            </div>
+        </div>
+    </ng-container>
+</section>
+
+<section class="search-container">
+  <div class="search">
+    <form>
+      <input type="text" [(ngModel)]="searchTerm" name="searchTerm" placeholder="Rechercher un houblon" ((keyup))="searchFilter($event)"/>
+    </form>
+  </div>
+</section>
+
+<section >
+    <ng-container>
+      <table>
+        <tr *ngFor="let ingredient of hopsToDisplay; let i = index">
+          <div *ngIf="searchIngredient(ingredient)" class="ingredient">   
+            <div>
+              <td class="ingredientName">{{ingredient.name}}</td>
+              <td class="ingredientDescription">{{ingredient.characterDescription}}</td>
+            </div>
+            <div class="styleAndType">
+          <td>Type: {{ingredient.type}}</td>
+          <td *ngIf="ingredient.style!==''">Style: {{ingredient.style}}</td>
+            </div>
+        </div>
+        </tr>
+      </table>
+    </ng-container>
+</section>

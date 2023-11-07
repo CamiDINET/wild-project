@@ -1,0 +1,32 @@
+<section>
+    <div class="logo">
+        <a routerLink="/recipe">
+        <img class="recipe" src="../../assets/recipeLogo.svg" alt="logo recette">
+        <div [ngClass]="(isActivated('recipe')) ? 'logoTitleActivated' : 'logoTitle'">Recettes</div>
+        </a>
+    </div>
+    <div>
+        <a routerLink="/hops">
+        <img src="../../assets/hopLogo.svg" alt="logo houblon">
+        <div [ngClass]="(isActivated('hops')) ? 'logoTitleActivated' : 'logoTitle'">Houblons</div>
+        </a>
+    </div>
+    <div>
+        <a routerLink="/malts">
+        <img src="../../assets/maltLogo.svg" alt="logo malt">
+        <div [ngClass]="(isActivated('malts')) ? 'logoTitleActivated' : 'logoTitle'">Malts</div>
+        </a>
+    </div>
+    <div>
+        <a routerLink="/yeasts">
+        <img src="../../assets/yeastLogo.svg" alt="logo levure">
+        <div [ngClass]="(isActivated('yeasts')) ? 'logoTitleActivated' : 'logoTitle'">Levures</div>
+        </a>
+    </div>
+    <div>
+        <a routerLink="/various">
+        <img src="../../assets/variousLogo.svg" alt="logo 3 points">
+        <div [ngClass]="(isActivated('various')) ? 'logoTitleActivated' : 'logoTitle'">Divers</div>
+        </a>
+    </div>
+</section>

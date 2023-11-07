@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+* :not(h1) {
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    color: black;
+  }
+  .listOfIngredients{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    
+}

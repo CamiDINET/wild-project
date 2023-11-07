@@ -1,0 +1,10 @@
+<app-nav-bar></app-nav-bar>
+<h1>Ingrédients divers en stock</h1>
+<div class="souligner">
+  <img src="../../../assets/souligner.svg" alt="soulignemen">
+</div>
+<div class="listOfIngredients">
+    <ng-container *ngFor="let ingredient of variousToDisplay; let i = index">
+      <app-ingredient [ingredient]="ingredient" [i]="i"></app-ingredient>
+    </ng-container>
+  </div>

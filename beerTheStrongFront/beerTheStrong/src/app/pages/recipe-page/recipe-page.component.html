@@ -1,0 +1,34 @@
+<app-nav-bar></app-nav-bar>
+<h1>Recettes réalisées</h1>
+<div class="souligner">
+    <img src="../../../assets/souligner.svg" alt="soulignemen">
+  </div>
+<section *ngIf="!displayCreate">
+    <ng-container *ngFor="let ingredient of recipesToDisplay; let i = index">
+        <app-ingredient [ingredient]="ingredient" [i]="i"></app-ingredient>
+      </ng-container>
+    <button (click)="displayCreateRecipe()">Ajouter une recette</button>
+</section>
+
+
+<section *ngIf="displayCreate">
+    <form> 
+        <!--[formGroup]="loginForm"
+    (ngSubmit)="loginForm.valid && onSubmit()"
+    #myForm="ngForm"
+    class="loginForm" -->
+
+    <fieldset>
+        <select name="malt" *ngFor="let malt of maltsToDisplay">
+            <option value="">Séléctionnez un malt</option>
+            <option value={{malt.name}}>{{malt.name}}</option>
+        </select>
+    </fieldset>
+    
+    <fieldset></fieldset>
+    <fieldset></fieldset>
+    <fieldset></fieldset>
+    <fieldset></fieldset>
+
+    </form>
+</section>

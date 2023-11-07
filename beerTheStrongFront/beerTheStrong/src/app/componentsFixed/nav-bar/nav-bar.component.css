@@ -1,0 +1,53 @@
+img{
+    width: 100px;
+}
+.recipe{
+    width: 60px;
+}
+section{
+    display: flex;
+    justify-content:space-around;
+    align-items: flex-end;
+}
+section div, a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    /* width: 15vw; */
+}
+a{
+    text-decoration:none;
+    color: black;
+}
+a, .logoTitle, .logoTitleActivated{
+    width:200px;
+    
+}
+.logoTitle, .logoTitleActivated{
+    font-family: 'Just Another Hand', cursive;
+    font-size: xx-large;
+    height:100px;
+    
+}
+
+section div:hover .logoTitle{
+    background-image: url('../../../assets/entourer.svg');   
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat;
+   
+}
+/* .logo{
+    background-image: url('../../../assets/capsuleVide.svg');   
+     background-position: center; 
+    background-size:contain;
+    background-repeat: no-repeat;
+} */
+.logoTitleActivated{
+    background-image: url('../../../assets/entourer.svg');   
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,46 @@
+<app-nav-bar></app-nav-bar>
+<h1>Malts en stock</h1>
+<div class="emphasize">
+  <img src="../../../assets/souligner.svg" alt="soulignemen">
+</div>
+<section class="listOfIngredients">
+  <ng-container *ngFor="let maltToDisplay of maltsInStockToDisplay; let i = index">
+   
+      <div class="malt">
+          <img src="../../../assets/malts.svg" alt="photo de malt">
+          <div class="contain">
+            <div>Nom: {{maltToDisplay.malt.name}}</div>
+            <div>Style: {{maltToDisplay.malt.style}}</div> 
+            <div>EBC: {{maltToDisplay.ebc}}</div> 
+            <div>Utilisation maximale: {{maltToDisplay.malt.maxUse}}%</div> 
+            <div>Quantité en stock: {{maltToDisplay.stockQuantity}} g</div>  
+          </div>
+      </div>
+  </ng-container>
+</section>
+
+<section class="search-container">
+  <div class="search">
+    <form>
+      <input type="text" [(ngModel)]="searchTerm" name="searchTerm" placeholder="Rechercher un malt" (keyup)="searchFilter($event)" />
+    </form>
+  </div>
+</section>
+
+<section class="listOfIngredients">
+  <ng-container>
+    <table>
+      <tr *ngFor="let ingredient of maltsToDisplay; let i = index">
+        <div *ngIf="searchIngredient(ingredient)" class="ingredient">   
+          <div>
+            <td class="ingredientName">{{ingredient.name}}</td>
+            <td class="ingredientDescription">{{ingredient.description}}</td>
+          </div>
+          <div class="style">
+        <td>Style: {{ingredient.style}}</td>
+          </div>
+      </div>
+      </tr>
+    </table>
+  </ng-container>
+</section>
